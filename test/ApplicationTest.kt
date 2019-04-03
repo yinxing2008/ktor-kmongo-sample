@@ -10,25 +10,14 @@ import java.util.*
 class ApplicationTest {
 
     @Test
-    fun testRoot() {
-        withTestApplication({ module(testing = true) }) {
-            handleRequest(HttpMethod.Get, "/users").apply {
-                assertEquals(HttpStatusCode.OK, response.status())
-                System.out.println(response.content)
-            }
-        }
-    }
-
-
-    @Test
     fun testAddData() {
         withTestApplication({ module(testing = true) }) {
-            handleRequest(HttpMethod.Post, "/users")
+            handleRequest(HttpMethod.Post, "/users/add")
             {
                 addHeader(HttpHeaders.ContentType, ContentType.Application.Json.toString())
                 setBody(
                     mapOf(
-                        "userName" to "jerry",
+                        "userName" to "jerry5",
                         "password" to "123456",
                         "email" to "test@gmail.com"
                     ).json
@@ -39,5 +28,15 @@ class ApplicationTest {
         }
     }
 
+
+    @Test
+    fun testList() {
+        withTestApplication({ module(testing = true) }) {
+            handleRequest(HttpMethod.Get, "/users/list").apply {
+                assertEquals(HttpStatusCode.OK, response.status())
+                System.out.println(response.content)
+            }
+        }
+    }
 
 }
