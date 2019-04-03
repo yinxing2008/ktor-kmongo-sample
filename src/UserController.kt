@@ -23,7 +23,7 @@ fun Route.userRoutes() {
 
     route("/users") {
 
-        get("") {
+        get("/list") {
             val users = client.getDatabase(dbName)
                 .getCollection<User>(collectionName)
                 .find()
@@ -31,7 +31,7 @@ fun Route.userRoutes() {
             call.respond(HttpStatusCode.OK, users)
         }
 
-        post<CreateUserRequest>("") {request ->
+        post<CreateUserRequest>("/add") {request ->
             val user = User(userName = request.userName,
                 password = request.password,
                 email = request.email)
