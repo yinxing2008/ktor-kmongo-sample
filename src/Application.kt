@@ -41,7 +41,7 @@ fun Application.module(testing: Boolean = false) {
         method(HttpMethod.Put)
         method(HttpMethod.Delete)
         method(HttpMethod.Patch)
-        header(HttpHeaders.Authorization)
+//        header(HttpHeaders.Authorization)
         header("MyCustomHeader")
         allowCredentials = true
         anyHost() // @TODO: Don't do this in production if possible. Try to limit it.
@@ -64,5 +64,5 @@ fun Application.module(testing: Boolean = false) {
 }
 
 val module = module {
-    single { KMongo.createClient("mongodb://127.0.0.1:32768").coroutine }
+    single { KMongo.createClient("mongodb://127.0.0.1:27017").coroutine }
 }
