@@ -50,7 +50,6 @@ data class User(
     val email: String
 )
 
-@Location("")
 data class CreateUserRequest(val userName: String,
                              val password: String,
                              val email: String)
