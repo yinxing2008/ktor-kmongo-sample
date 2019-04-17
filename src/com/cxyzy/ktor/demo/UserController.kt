@@ -1,3 +1,5 @@
+package com.cxyzy.ktor.demo
+
 import io.ktor.application.call
 import io.ktor.http.HttpStatusCode
 import io.ktor.response.respond
@@ -30,10 +32,12 @@ fun Route.userRoutes() {
             call.respond(HttpStatusCode.OK, users)
         }
 
-        post<CreateUserRequest>("/add") {request ->
-            val user = User(userName = request.userName,
+        post<CreateUserRequest>("/add") { request ->
+            val user = User(
+                userName = request.userName,
                 password = request.password,
-                email = request.email)
+                email = request.email
+            )
             client.getDatabase(dbName)
                 .getCollection<User>(collectionName)
                 .insertOne(user)
