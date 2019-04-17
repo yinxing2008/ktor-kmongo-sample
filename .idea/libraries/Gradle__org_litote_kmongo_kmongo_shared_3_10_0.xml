@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.litote.kmongo:kmongo-shared:3.10.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.litote.kmongo/kmongo-shared/3.10.0/10ce653db4070c2a45e91c4bae66dbb43fffc256/kmongo-shared-3.10.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.litote.kmongo/kmongo-shared/3.10.0/8a164fe38b3129739294f96c15979f67c3a5f36c/kmongo-shared-3.10.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
