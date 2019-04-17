@@ -5,7 +5,7 @@ buildscript {
     
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.0.0'
     }
 }
 
@@ -15,7 +15,7 @@ apply plugin: 'application'
 
 group 'ktor-sample'
 version '1.0.0-SNAPSHOT'
-mainClassName = "io.ktor.server.netty.EngineMain"
+mainClassName = 'com.cxyzy.ktor.demo.ApplicationKt'
 
 sourceSets {
     main.kotlin.srcDirs = main.java.srcDirs = ['src']
@@ -46,9 +46,8 @@ dependencies {
     testCompile group: 'org.koin', name: 'koin-test', version: '2.0.0-beta-1'
 }
 
-mainClassName = 'com.cxyzy.ktor.demo.Application'
 shadowJar {
-    manifest {
-        attributes 'Main-Class': mainClassName
-    }
+    baseName = 'ktor-sample'
+    classifier = null
+    version = '1.0.0'
 }

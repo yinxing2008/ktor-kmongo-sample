@@ -1,11 +1,10 @@
 package io.jkratz.katas
 
+import com.cxyzy.ktor.demo.module
 import io.ktor.http.*
 import kotlin.test.*
 import io.ktor.server.testing.*
-import module
 import org.litote.kmongo.json
-import java.util.*
 
 class ApplicationTest {
 
