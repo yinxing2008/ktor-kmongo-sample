@@ -1,7 +1,8 @@
-package com.cxyzy.ktor.demo
+package com.cxyzy.ktor.demo.controller
 
-import com.cxyzy.ktor.demo.beans.UnifResult
-import com.cxyzy.ktor.demo.beans.User
+import com.cxyzy.ktor.demo.bean.BaseResult
+import com.cxyzy.ktor.demo.bean.User
+import com.cxyzy.ktor.demo.dbName
 import com.cxyzy.ktor.demo.request.RegisterRequest
 import io.ktor.application.call
 import io.ktor.http.HttpStatusCode
@@ -20,7 +21,7 @@ fun Route.userRoutes() {
     val logger: Logger = LoggerFactory.getLogger("UserController")
     val client: CoroutineClient by inject()
 
-    val dbName = "demo"
+
     val collectionName = "users"
 
     route("/users") {
@@ -41,7 +42,7 @@ fun Route.userRoutes() {
             client.getDatabase(dbName)
                 .getCollection<User>(collectionName)
                 .insertOne(user)
-            val result = UnifResult(100,"ok")
+            val result = BaseResult(100,"ok")
             call.respond(HttpStatusCode.OK,result)
         }
     }
