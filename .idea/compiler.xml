@@ -2,6 +2,10 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="ktor-kmongo-sample.ktor-kmongo-sample.main" target="1.8" />
+      <module name="ktor-kmongo-sample.ktor-kmongo-sample.test" target="1.8" />
+      <module name="ktor-sample.ktor-kmongo-sample.main" target="1.8" />
+      <module name="ktor-sample.ktor-kmongo-sample.test" target="1.8" />
       <module name="ktor-sample.ktor-sample.main" target="1.8" />
       <module name="ktor-sample.ktor-sample.test" target="1.8" />
     </bytecodeTargetLevel>
